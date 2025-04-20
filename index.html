@@ -28,10 +28,13 @@
 
     function openRandomTweet() {
       const randomTweet = tweets[Math.floor(Math.random() * tweets.length)];
-      window.open(randomTweet, '_blank');
-
       const randomReply = replyTexts[Math.floor(Math.random() * replyTexts.length)];
+      
+      // 답글 문구 먼저 표시
       document.getElementById('replyText').value = randomReply;
+
+      // 그 다음 트윗 새 창 열기
+      window.open(randomTweet, '_blank');
     }
 
     function copyReplyText() {
@@ -54,7 +57,7 @@
     body {
       margin: 0;
       padding: 20px;
-      font-family: 'Pretendard', sans-serif, Arial;
+      font-family: 'Pretendard', sans-serif, Arial, sans-serif;
       background-color: #f7f7f7;
       text-align: center;
     }
@@ -105,9 +108,9 @@
   </style>
 </head>
 <body>
-  <h1>🛑 현대차 규탄 랜덤 답글 & 항의전화</h1>
+  <h1>🛑 현대차 규탄 답글 & 항의전화</h1>
 
-  <button onclick="openRandomTweet()">🎯 랜덤 트윗 열기</button>
+  <button onclick="openRandomTweet()">🎯 트윗 열기</button>
   
   <div style="margin-top: 30px;">
     <p>✏️ <strong>이 답글 문구를 복사해서 트윗에 붙여넣으세요:</strong></p>
@@ -118,7 +121,7 @@
   <div class="section">
     <h2>📞 홍보실에 항의 전화 걸기</h2>
     <p>전화 버튼을 누르면 전화 앱이 열립니다.</p>
-    <a href="tel:#">
+    <a href="tel:+82806006000">
       <button>📞 홍보실에 전화 걸기</button>
     </a>
     <div class="protest-box" id="protestContent"></div> <!-- 버튼 밑으로 옮김 -->
