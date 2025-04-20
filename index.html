@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>현대차 규탄 랜덤 답글 & 항의전화</title>
+  <title>현대차 규탄 랜덤 트윗 & 항의전화</title>
   <script>
     const tweets = [
       "https://x.com/hmg_talk/status/1913117041961422962?s=46",
@@ -14,12 +14,6 @@
       "https://x.com/hmg_talk/status/1912690775349203034?s=46"
     ];
 
-    const replyTexts = [
-      "2025년 4월 19일, 현대차 울산공장 앞에서 구사대와 경찰이 집회 참가자들을 폭력적으로 진압한 사건에 깊은 분노를 표합니다. 시민을 보호해야 할 경찰이 오히려 구사대와 함께 폭력을 행사한 것은 명백한 인권 침해입니다. 현대차는 즉각 사과하고 책임자를 처벌해야 합니다.",
-      "집회 현장에서 노동자들을 폭행한 현대차 구사대와 이를 방조한 경찰의 행위를 강력히 규탄합니다. 평화로운 시위를 폭력으로 짓밟은 것은 명백한 범죄입니다. 현대차는 사과하고 구사대 동원 책임자를 공개 처벌해야 하며, 경찰 역시 책임을 져야 합니다.",
-      "현대차 앞 집회에서 발생한 구사대·경찰 폭력 사건은 결코 묻혀서는 안 됩니다. 평화롭게 시위하던 시민을 집단폭행한 것은 노동자 탄압이며, 인권에 대한 중대한 침해입니다. 현대차는 사건을 은폐하지 말고 공식 사과와 재발방지 대책을 마련해야 합니다."
-    ];
-
     const protestTexts = [
       "2025년 4월 19일 현대차 울산공장 앞에서 평화적인 집회를 벌이던 노동자와 시민들이 구사대와 경찰로부터 폭력적인 공격을 받았습니다. 현대차는 집회를 폭력으로 진압하려 한 데 대해 책임을 인정하고, 피해자들에게 공식 사과하고, 가해자를 처벌하며 재발 방지 대책을 즉각 마련해야 합니다.",
       "현대차 울산공장 앞에서 발생한 구사대와 경찰의 집단 폭력은 절대 용납될 수 없습니다. 노동자의 권리와 시민의 자유를 짓밟은 현대차는 공식 사과하고, 폭력 행위에 대해 책임자를 엄중히 처벌해야 합니다. 재발 방지를 위한 구체적 조치도 즉각 시행해야 합니다.",
@@ -28,20 +22,7 @@
 
     function openRandomTweet() {
       const randomTweet = tweets[Math.floor(Math.random() * tweets.length)];
-      const randomReply = replyTexts[Math.floor(Math.random() * replyTexts.length)];
-      
-      // 답글 문구 먼저 표시
-      document.getElementById('replyText').value = randomReply;
-
-      // 그 다음 트윗 새 창 열기
       window.open(randomTweet, '_blank');
-    }
-
-    function copyReplyText() {
-      const replyBox = document.getElementById('replyText');
-      replyBox.select();
-      document.execCommand('copy');
-      alert('✏️ 답글 문구가 복사되었습니다!');
     }
 
     function setRandomProtestText() {
@@ -80,17 +61,6 @@
     button:hover {
       background-color: #0066cc;
     }
-    textarea {
-      width: 90%;
-      max-width: 400px;
-      height: 120px;
-      font-size: 16px;
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      resize: none;
-    }
     .section {
       margin-top: 50px;
     }
@@ -108,15 +78,9 @@
   </style>
 </head>
 <body>
-  <h1>🛑 현대차 규탄 답글 & 항의전화</h1>
+  <h1>🛑 현대차 규탄 랜덤 트윗 & 항의전화</h1>
 
   <button onclick="openRandomTweet()">🎯 트윗 열기</button>
-  
-  <div style="margin-top: 30px;">
-    <p>✏️ <strong>이 답글 문구를 복사해서 트윗에 붙여넣으세요:</strong></p>
-    <textarea id="replyText" readonly></textarea><br>
-    <button onclick="copyReplyText()">📋 답글 문구 복사하기</button>
-  </div>
 
   <div class="section">
     <h2>📞 홍보실에 항의 전화 걸기</h2>
@@ -124,7 +88,7 @@
     <a href="tel:+82806006000">
       <button>📞 홍보실에 전화 걸기</button>
     </a>
-    <div class="protest-box" id="protestContent"></div> <!-- 버튼 밑으로 옮김 -->
+    <div class="protest-box" id="protestContent"></div>
   </div>
 </body>
 </html>
