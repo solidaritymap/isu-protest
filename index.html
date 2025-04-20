@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>현대차 규탄 랜덤 트윗 & 항의전화</title>
+  <title>현대차 규탄 트윗 & 항의전화</title>
   <script>
     const tweets = [
       "https://x.com/hmg_talk/status/1913117041961422962?s=46",
@@ -28,13 +28,8 @@
 
     let currentReply = "";
 
-    function openRandomTweet() {
-      const randomTweet = tweets[Math.floor(Math.random() * tweets.length)];
-      currentReply = replyTexts[Math.floor(Math.random() * replyTexts.length)];
-      window.open(randomTweet, '_blank');
-    }
-
     function copyReplyText() {
+      currentReply = replyTexts[Math.floor(Math.random() * replyTexts.length)];
       if (currentReply) {
         navigator.clipboard.writeText(currentReply)
           .then(() => {
@@ -43,9 +38,12 @@
           .catch(err => {
             alert('복사 실패: ' + err);
           });
-      } else {
-        alert('먼저 트윗을 열어 답글 문구를 뽑아주세요!');
       }
+    }
+
+    function openRandomTweet() {
+      const randomTweet = tweets[Math.floor(Math.random() * tweets.length)];
+      window.open(randomTweet, '_blank');
     }
 
     function setRandomProtestText() {
@@ -101,10 +99,10 @@
   </style>
 </head>
 <body>
-  <h1>🛑 현대차 랜덤 트윗 & 항의전화</h1>
+  <h1>🛑 현대차 규탄 트윗 & 항의전화</h1>
 
-  <button onclick="openRandomTweet()">🎯 트윗 열기</button>
-  <button onclick="copyReplyText()">📋 답글 문구 복사하기</button>
+  <button onclick="copyReplyText()">1. 📋 답글 문구 복사하기</button>
+  <button onclick="openRandomTweet()">2. 🎯 트윗 열어서 답글 혹은 인용쓰기</button>
 
   <div class="section">
     <h2>📞 홍보실에 항의 전화 걸기</h2>
